@@ -1,21 +1,14 @@
-############################################################################
-#
-#      Acer liquid build file, based on codeaurora tree qsd8250_ffa
-#
-#     Created by Koudelka @ modaco
-#
-############################################################################
-# 
-# 
-# Need to chmod 
-# 
-# 
-# 
-# 
-#
-# TODO: Stuff :)
-#
-############################################################################
+#############################################################################
+#									    #
+#     Acer liquid build file, based on codeaurora tree qsd8250_ffa	    #
+#									    #
+#     Created by Koudelka and xian1243					    #
+#									    #
+#############################################################################
+# 									    #
+#     Need to chmod							    #
+# 									    #
+#############################################################################
 PRODUCT_PACKAGES := \
     Email \
     IM \
@@ -56,7 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=15
 
-#Copy config files
+#Copy configuration files
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/etc/vold.fstab:system/etc/vold.fstab \
    device/acer/liquid/proprietary/etc/vold.conf:system/etc/vold.conf \
@@ -70,7 +63,7 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/usr/keylayout/AVRCP.kl:system/usr/keylayout/ \
    device/acer/liquid/proprietary/usr/keylayout/qwerty.kl:system/usr/keylayout/ 
 
-#Copy premissions
+#Copy permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -81,7 +74,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
-#Copy bluetooth & wifi
+#Copy Bluetooth & WiFi firmwares and configurations
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/etc/firmware/BCM4325.hcd:system/etc/firmware/BCM4325.hcd \
    device/acer/liquid/proprietary/etc/firmware/BCM4325.bin:system/etc/firmware/BCM4325.bin \
@@ -90,7 +83,7 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
   
 
-#Copy dhcpd (probably need to chmod dhcpcd-eth0.pid)
+#Copy dhcpd (need to chmod dhcpcd-eth0.pid upon flashing)
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
    device/acer/liquid/proprietary/etc/dhcpcd/dhcpcd-run-hooks:system/etc/dhcpcd/dhcpcd-run-hooks \
@@ -99,7 +92,7 @@ PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/etc/dhcpcd/dhcpcd-hooks/95-configured:system/etc/dhcpcd/dhcpcd-hooks/95-configured \
    device/acer/liquid/proprietary/data/misc/dhcp/dhcpcd-eth0.pid:data/misc/dhcp/dhcpcd-eth0.pid
 
-#Copy sensor lib, bin and conf (need to chmod ms3c_yamaha.cfg to get it to work)
+#Copy sensor library, binary and configuration (need to chmod ms3c_yamaha.cfg upon flashing for yamaha sensor to function properly)
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/hw/sensors.salsa.so:system/lib/hw/sensors.salsa.so \
    device/acer/liquid/proprietary/lib/hw/lights.salsa.so:system/lib/hw/lights.salsa.so \
@@ -110,7 +103,7 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/bin/sensorstatutil_yamaha:system/bin/sensorstatutil_yamaha \
    device/acer/liquid/proprietary/data/system/ms3c_yamaha.cfg:data/system/ms3c_yamaha.cfg
 
-#Copy gps stuff
+#Copy GPS libraries and dependencies
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/libloc.so:system/lib/libloc.so \
    device/acer/liquid/proprietary/lib/libloc.so:obj/lib/libloc.so \
@@ -121,7 +114,7 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/libgps.so:system/lib/libgps.so \
    device/acer/liquid/proprietary/lib/libgps.so:obj/lib/libgps.so
 
-#Copy egl stuff
+#Copy EGL libraries
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
    device/acer/liquid/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
@@ -131,16 +124,17 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
    device/acer/liquid/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
-#Copy camera libraries
+#Files needed for compiling against Acer's proprietary libcamera (currently not working, workaround avaible)
 #   device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \
 #   device/acer/liquid/proprietary/lib/libcamera.so:system/lib/libcamera.so \
 #   device/acer/liquid/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
+#Copy camera libraries for building RE'd libcamera2
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
    device/acer/liquid/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
    device/acer/liquid/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so 
 
-#Copy Gralloc, Copybit and libaudio from codeaurora build
+#Copy Gralloc, Copybit and libaudio from CodeAurora qsd8k/surf build
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/hw/copybit.qsd8k.so:system/lib/hw/copybit.qsd8k.so \
    device/acer/liquid/proprietary/lib/hw/gralloc.qsd8k.so:system/lib/hw/gralloc.qsd8k.so \
