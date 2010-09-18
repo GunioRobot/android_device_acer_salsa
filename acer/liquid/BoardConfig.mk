@@ -27,8 +27,7 @@
 #######
 
     BOARD_USES_GENERIC_AUDIO := false
-    BOARD_CAMERA_LIBRARIES := libcamera
-    BOARD_GPS_LIBRARIES := libgps
+    BOARD_GPS_LIBRARIES := libgps libloc
     BOARD_HAVE_BLUETOOTH := true
     BOARD_HAVE_BLUETOOTH_BCM := true
     BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
@@ -38,12 +37,13 @@
 
 # WiFi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION := VER_0_6_X
 BOARD_WLAN_DEVICE := bcm4329
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_MODULE_NAME := "bcm4329"
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/BCM4325.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/BCM4325_apsta.bin"
 WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=etc/wifi/nvram.txt"
+WIFI_DRIVER_MODULE_NAME := "bcm4329"
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := true
@@ -64,7 +64,7 @@ TARGET_BOOTLOADER_BOARD_NAME := salsa
 BOARD_KERNEL_BASE    := 0x20000000
 BOARD_NAND_PAGE_SIZE := 2048
 
-#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/zImage
+#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/prebuilt-zImage
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=qcom
 BOARD_EGL_CFG := device/acer/liquid/proprietary/lib/egl/egl.cfg

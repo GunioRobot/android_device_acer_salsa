@@ -1,13 +1,13 @@
 #############################################################################
-#									    #
-#     Acer liquid build file, based on codeaurora tree qsd8250_ffa	    #
-#									    #
-#     Created by Koudelka and xian1243					    #
-#									    #
+#                                                                           #
+#     Acer liquid build file, based on codeaurora tree qsd8250_ffa          #
+#                                                                           #
+#     Created by Koudelka and xian1243                                      #
+#                                                                           #
 #############################################################################
-# 									    #
-#     Need to chmod							    #
-# 									    #
+#                                                                           #
+#     Need to chmod                                                         #
+#                                                                           #
 #############################################################################
 PRODUCT_PACKAGES := \
     Email \
@@ -18,7 +18,6 @@ PRODUCT_PACKAGES := \
     LiveWallpapersPicker \
     MagicSmokeWallpapers \
     VisualizationWallpapers
-    
 
 #check generik.mk/languages_full.mk to see what applications/languages are installed
 #turns out all languages get included if I don't specify, but some seem to be missing the actuall translation
@@ -31,6 +30,13 @@ PRODUCT_LOCALES += hdpi
 
 # Enabling Ring Tones
 include frameworks/base/data/sounds/OriginalAudio.mk
+
+# Overrides
+PRODUCT_BRAND := acer
+PRODUCT_NAME := a1_generic1
+PRODUCT_DEVICE := a1
+PRODUCT_MODEL := Liquid
+PRODUCT_MANUFACTURER := Acer
 
 # Additional settings used in AOSP builds
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -131,12 +137,15 @@ PRODUCT_COPY_FILES += \
 #Copy camera libraries for building RE'd libcamera2
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
+   device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \
    device/acer/liquid/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
-   device/acer/liquid/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so 
+   device/acer/liquid/proprietary/lib/libmmipl.so:obj/lib/libmmipl.so \
+   device/acer/liquid/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
+   device/acer/liquid/proprietary/lib/libmmjpeg.so:obj/lib/libmmjpeg.so 
 
 #Copy Gralloc, Copybit and libaudio from CodeAurora qsd8k/surf build
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/hw/copybit.qsd8k.so:system/lib/hw/copybit.qsd8k.so \
    device/acer/liquid/proprietary/lib/hw/gralloc.qsd8k.so:system/lib/hw/gralloc.qsd8k.so \
-   device/acer/liquid/proprietary/lib/libaudio.so:system/lib/lib/libaudio.so
+   device/acer/liquid/proprietary/lib/libaudio.so:system/lib/libaudio.so
 
