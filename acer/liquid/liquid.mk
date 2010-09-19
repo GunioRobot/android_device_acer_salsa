@@ -130,11 +130,7 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
    device/acer/liquid/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
-#Files needed for compiling against Acer's proprietary libcamera (currently not working, workaround avaible)
-#   device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \
-#   device/acer/liquid/proprietary/lib/libcamera.so:system/lib/libcamera.so \
-#   device/acer/liquid/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
-#Copy camera libraries for building RE'd libcamera2
+#Copy camera libraries
 PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
    device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \
@@ -142,10 +138,3 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/libmmipl.so:obj/lib/libmmipl.so \
    device/acer/liquid/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
    device/acer/liquid/proprietary/lib/libmmjpeg.so:obj/lib/libmmjpeg.so 
-
-#Copy Gralloc, Copybit and libaudio from CodeAurora qsd8k/surf build
-PRODUCT_COPY_FILES += \
-   device/acer/liquid/proprietary/lib/hw/copybit.qsd8k.so:system/lib/hw/copybit.qsd8k.so \
-   device/acer/liquid/proprietary/lib/hw/gralloc.qsd8k.so:system/lib/hw/gralloc.qsd8k.so \
-   device/acer/liquid/proprietary/lib/libaudio.so:system/lib/libaudio.so
-
