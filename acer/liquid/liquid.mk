@@ -115,6 +115,8 @@ PRODUCT_COPY_FILES += \
    device/acer/liquid/proprietary/lib/libloc.so:obj/lib/libloc.so \
    device/acer/liquid/proprietary/lib/libloc-rpc.so:system/lib/libloc-rpc.so \
    device/acer/liquid/proprietary/lib/libloc-rpc.so:obj/lib/libloc-rpc.so \
+   device/acer/liquid/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
+   device/acer/liquid/proprietary/lib/libloc_api.so:obj/lib/libloc_api.so \
    device/acer/liquid/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
    device/acer/liquid/proprietary/lib/libcommondefs.so:obj/lib/libcommondefs.so \
    device/acer/liquid/proprietary/lib/libgps.so:system/lib/libgps.so \
