@@ -134,7 +134,7 @@ device/acer/liquid/proprietary/data/misc/dhcp/dhcpcd-eth0.pid:data/misc/dhcp/dhc
 
 # Copy GPS libraries and dependencies
 PRODUCT_COPY_FILES += \
-device/acer/liquid/proprietary/lib/ibloc.so:system/lib/libloc.so \
+device/acer/liquid/proprietary/lib/libloc.so:system/lib/libloc.so \
 device/acer/liquid/proprietary/lib/libloc-rpc.so:system/lib/libloc-rpc.so \
 device/acer/liquid/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
 device/acer/liquid/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
