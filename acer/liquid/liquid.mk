@@ -98,6 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/lib/libgps.so:obj/lib/libgps.so \
+device/acer/liquid/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
 device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so
 
 # All the blobs necessary for liquid
