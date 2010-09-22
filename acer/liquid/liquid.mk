@@ -144,7 +144,13 @@ vendor/acer/liquid/proprietary/etc/firmware/BCM4325.hcd:system/etc/firmware/BCM4
 vendor/acer/liquid/proprietary/etc/firmware/BCM4325.bin:system/etc/firmware/BCM4325.bin \
 vendor/acer/liquid/proprietary/etc/firmware/BCM4325_apsta.bin:system/etc/firmware/BCM4325_apsta.bin \
 vendor/acer/liquid/proprietary/etc/wifi/nvram.txt:system/etc/wifi/nvram.txt \
-vendor/acer/liquid/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+vendor/acer/liquid/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
+# Copy Vold and configs
+PRODUCT_COPY_FILES += \
+device/acer/liquid/proprietary/etc/vold.fstab:system/etc/vold.fstab \
+device/acer/liquid/proprietary/etc/vold.conf:system/etc/vold.conf \
+device/acer/liquid/proprietary/bin/vold:system/bin/vold
 
 # Copy sensor library, binary and configuration (need to chmod ms3c_yamaha.cfg upon flashing for yamaha sensor to function properly)
 PRODUCT_COPY_FILES += \
