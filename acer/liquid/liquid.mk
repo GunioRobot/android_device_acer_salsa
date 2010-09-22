@@ -173,3 +173,15 @@ device/acer/liquid/proprietary/usr/keylayout/h2w_headset.kl:system/usr/keylayout
 device/acer/liquid/proprietary/usr/keylayout/acer-hs-butt.kl:system/usr/keylayout/acer-hs-butt.kl \
 device/acer/liquid/proprietary/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
 device/acer/liquid/proprietary/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
+
+# Copy proprietary Omx* V/A encoders and decoders
+PRODUCT_COPY_FILES += \
+device/acer/liquid/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+device/acer/liquid/proprietary/lib/libOmxAmrEnc.so.so:system/lib/libOmxAmrEnc.so.so \
+device/acer/liquid/proprietary/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
+device/acer/liquid/proprietary/lib/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
+device/acer/liquid/proprietary/lib/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
+device/acer/liquid/proprietary/lib/libOmxQcelp13Dec.so:system/lib/libOmxQcelp13Dec.so \
+device/acer/liquid/proprietary/lib/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
+device/acer/liquid/proprietary/lib/libOmxVdec.so:system/lib/libOmxVdec.so \
+device/acer/liquid/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
