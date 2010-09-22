@@ -22,12 +22,12 @@
 #Make sure you include lib that use 2G prelinking in liquid.mk
 #    VM_SPLIT_2G := true
 
-#######   for use when building CM
+#######   for use when building CyanogenMod
     USE_CAMERA_STUB := false
 #######
 
     BOARD_USES_GENERIC_AUDIO := false
-    BOARD_GPS_LIBRARIES := libgps libloc libloc_api
+    BOARD_GPS_LIBRARIES := libgps librpc
     BOARD_HAVE_BLUETOOTH := true
     BOARD_HAVE_BLUETOOTH_BCM := true
     BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
@@ -42,7 +42,7 @@ BOARD_WLAN_DEVICE := bcm4329
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/BCM4325.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/BCM4325_apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=etc/wifi/nvram.txt"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=/etc/wifi/nvram.txt"
 WIFI_DRIVER_MODULE_NAME := "bcm4329"
 
 TARGET_NO_BOOTLOADER := true
