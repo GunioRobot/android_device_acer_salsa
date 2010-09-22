@@ -109,10 +109,11 @@ device/acer/liquid/proprietary/lib/libril-acerril-hook-oem.so:system/lib/libril-
 
 # Copy EGL libraries
 PRODUCT_COPY_FILES += \
-device/acer/liquid/proprietary/lib/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-device/acer/liquid/proprietary/lib/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-device/acer/liquid/proprietary/lib/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-device/acer/liquid/proprietary/lib/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+device/acer/liquid/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+device/acer/liquid/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+device/acer/liquid/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
+device/acer/liquid/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+device/acer/liquid/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
 device/acer/liquid/proprietary/lib/libgsl.so:system/lib/libgsl.so
 
 #Copy camera libraries
