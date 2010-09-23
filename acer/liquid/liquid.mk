@@ -187,7 +187,7 @@ device/acer/liquid/proprietary/usr/keylayout/qwerty.kl:system/usr/keylayout/qwer
 # Copy proprietary Omx* V/A encoders and decoders
 PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
-device/acer/liquid/proprietary/lib/libOmxAmrEnc.so.so:system/lib/libOmxAmrEnc.so.so \
+device/acer/liquid/proprietary/lib/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
 device/acer/liquid/proprietary/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
 device/acer/liquid/proprietary/lib/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
 device/acer/liquid/proprietary/lib/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
