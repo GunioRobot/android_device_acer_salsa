@@ -106,6 +106,9 @@ device/acer/liquid/proprietary/lib/libloc-rpc.so:obj/lib/libloc-rpc.so \
 device/acer/liquid/proprietary/lib/libloc_api.so:obj/lib/libloc_api.so \
 device/acer/liquid/proprietary/lib/libcommondefs.so:obj/lib/libcommondefs.so \
 device/acer/liquid/proprietary/lib/liboncrpc.so:obj/lib/liboncrpc.so \
+device/acer/liquid/proprietary/lib/libdiag.so:obj/lib/libdiag.so \
+device/acer/liquid/proprietary/lib/libdsm.so:obj/lib/libdsm.so \
+device/acer/liquid/proprietary/lib/libqueue.so:obj/lib/libqueue.so \
 device/acer/liquid/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
 device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so
 
