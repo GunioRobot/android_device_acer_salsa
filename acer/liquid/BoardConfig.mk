@@ -27,7 +27,7 @@
 #######
 
     BOARD_USES_GENERIC_AUDIO := false
-    BOARD_GPS_LIBRARIES := libgps libloc
+    BOARD_GPS_LIBRARIES := libgps libloc libloc-rpc libloc_api
     BOARD_HAVE_BLUETOOTH := true
     BOARD_HAVE_BLUETOOTH_BCM := true
     BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
