@@ -79,6 +79,10 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.hw_version=4
 
+# Speed up scrolling
+PRODUCT_PROPERTY_OVERRIDES := \
+    windowsmgr.max_events_per_sec=60
+
 # Default network type.
 # 0 => WCDMA preferred, 3 => GSM/AUTO (PRL) preferred
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -97,6 +101,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # This is a high density device with more memory, so larger vm heaps for it.
 PRODUCT_PROPERTY_OVERRIDES := \
     dalvik.vm.heapsize=32m
+
+# Copy Liquid specific overlay configs/overrides
+DEVICE_PACKAGE_OVERLAYS += device/acer/liquid/overlay
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \
