@@ -195,4 +195,4 @@ device/acer/liquid/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
 
 # Copy startup script (for WiFi using BCM4325, while BCM4329 is worked on)
 PRODUCT_COPY_FILES += \
-device/acer/liquid/proprietary/etc/init.d/init.local.rc:etc/init.d/init.local.rc
+device/acer/liquid/proprietary/etc/init.d/init.local.rc:system/etc/init.d/init.local.rc
