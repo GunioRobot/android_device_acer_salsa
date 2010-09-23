@@ -104,6 +104,8 @@ device/acer/liquid/proprietary/lib/libgps.so:obj/lib/libgps.so \
 device/acer/liquid/proprietary/lib/libloc.so:obj/lib/libloc.so \
 device/acer/liquid/proprietary/lib/libloc-rpc.so:obj/lib/libloc-rpc.so \
 device/acer/liquid/proprietary/lib/libloc_api.so:obj/lib/libloc_api.so \
+device/acer/liquid/proprietary/lib/libcommondefs.so:obj/lib/libcommondefs.so \
+device/acer/liquid/proprietary/lib/liboncprc.so:obj/lib/liboncprc.so \
 device/acer/liquid/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
 device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so
 
@@ -144,6 +146,7 @@ device/acer/liquid/proprietary/lib/libloc.so:system/lib/libloc.so \
 device/acer/liquid/proprietary/lib/libloc-rpc.so:system/lib/libloc-rpc.so \
 device/acer/liquid/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
 device/acer/liquid/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
+device/acer/liquid/proprietary/lib/liboncprc.so:system/lib/liboncprc.so \
 device/acer/liquid/proprietary/lib/libgps.so:system/lib/libgps.so
 
 # Copy CodeAurora's prebuilt QSD8K libaudio
