@@ -1,0 +1,3 @@
+#!/system/bin/sh
+
+insmod /system/lib/modules/dhd.ko "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=/system/etc/nvram.txt"
