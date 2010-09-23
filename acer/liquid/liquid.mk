@@ -20,6 +20,9 @@ include frameworks/base/data/sounds/OriginalAudio.mk
 
 # Live wallpaper packages
 PRODUCT_PACKAGES := \
+Email \
+VoiceDialer \
+GoogleContactsProvider \
 LiveWallpapers \
 LiveWallpapersPicker \
 MagicSmokeWallpapers \
