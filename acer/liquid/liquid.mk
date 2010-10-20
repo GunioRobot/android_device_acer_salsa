@@ -68,9 +68,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Acer specific proximity sensor calibration
 PRODUCT_PROPERTY_OVERRIDES := \
-    persist.sys.psensor_base=2.3710938
-    hw.acer.psensor_calib_max_base=32707 \
-    hw.acer.psensor_calib_min_base=7439 \
     hw.acer.psensor_thres=500 \
     hw.acer.lsensor_multiplier=-1 \
     hw.acer.psensor_mode=1
@@ -110,12 +107,7 @@ PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/lib/libgps.so:obj/lib/libgps.so \
 device/acer/liquid/proprietary/lib/libloc.so:obj/lib/libloc.so \
 device/acer/liquid/proprietary/lib/libloc-rpc.so:obj/lib/libloc-rpc.so \
-device/acer/liquid/proprietary/lib/libloc_api.so:obj/lib/libloc_api.so \
 device/acer/liquid/proprietary/lib/libcommondefs.so:obj/lib/libcommondefs.so \
-device/acer/liquid/proprietary/lib/liboncrpc.so:obj/lib/liboncrpc.so \
-device/acer/liquid/proprietary/lib/libdiag.so:obj/lib/libdiag.so \
-device/acer/liquid/proprietary/lib/libdsm.so:obj/lib/libdsm.so \
-device/acer/liquid/proprietary/lib/libqueue.so:obj/lib/libqueue.so \
 device/acer/liquid/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
 device/acer/liquid/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so
 
@@ -154,9 +146,7 @@ device/acer/liquid/proprietary/data/misc/dhcp/dhcpcd-eth0.pid:data/misc/dhcp/dhc
 PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/lib/libloc.so:system/lib/libloc.so \
 device/acer/liquid/proprietary/lib/libloc-rpc.so:system/lib/libloc-rpc.so \
-device/acer/liquid/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
 device/acer/liquid/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
-device/acer/liquid/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
 device/acer/liquid/proprietary/lib/libgps.so:system/lib/libgps.so
 
 # Copy CodeAurora's prebuilt QSD8K libaudio

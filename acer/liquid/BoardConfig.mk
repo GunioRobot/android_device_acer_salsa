@@ -12,32 +12,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 # config.mk
 #
 # Product-specific compile-time definitions.
 #
-
-#This will build using 2G prelinkmap, making it compatible with acer official build.
-#Make sure you include lib that use 2G prelinking in liquid.mk
-#    VM_SPLIT_2G := true
-
 #######   for use when building CyanogenMod
-    USE_CAMERA_STUB := false
+USE_CAMERA_STUB := false
 #######
 
-    BOARD_USES_GENERIC_AUDIO := false
-    BOARD_GPS_LIBRARIES := libgps libloc libloc-rpc libloc_api
-    BOARD_HAVE_BLUETOOTH := true
-    BOARD_HAVE_BLUETOOTH_BCM := true
-    BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
-    BOARD_USES_QCOM_LIBS := true
-    BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_GPS_LIBRARIES := libgps librpc
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_FM_RADIO := true
+BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
+BOARD_USES_QCOM_LIBS := true
 
-# WiFi related defines (for bcm4329 driver, not finished kernel wise
+# For Koush's recovery
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
-BOARD_WLAN_DEVICE := bcm4329
+BOARD_WLAN_DEVICE := bcm4325
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/BCM4325.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/BCM4325_apsta.bin"
@@ -64,7 +61,7 @@ BOARD_KERNEL_BASE    := 0x20000000
 BOARD_NAND_PAGE_SIZE := 2048
 BOARD_PAGE_SIZE := 0x00001000
 
-#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/prebuilt-zImage
+#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/kernel
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=qcom
 BOARD_EGL_CFG := device/acer/liquid/proprietary/lib/egl/egl.cfg
