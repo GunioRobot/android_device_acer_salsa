@@ -8,6 +8,18 @@
 #PRODUCT_COPY_FILES := \
 #    device/acer/liquid/init.salsa.rc:root/init.salsa.rc
 
+# Packages to include
+PRODUCT_PACKAGES := \
+Email \
+VoiceDialer \
+GoogleContactsProvider \
+LiveWallpapers \
+LiveWallpapersPicker \
+MagicSmokeWallpapers \
+VisualizationWallpapers \
+FM \
+librs_jni
+
 # Check generic.mk/languages_full.mk to see what applications/languages are installed turns out all languages get included if I don't specify, but some seem to be missing the actuall translation.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
@@ -17,17 +29,6 @@ PRODUCT_LOCALES += hdpi
 
 # Enabling Ring Tones
 include frameworks/base/data/sounds/OriginalAudio.mk
-
-# Live wallpaper packages
-PRODUCT_PACKAGES := \
-Email \
-VoiceDialer \
-GoogleContactsProvider \
-LiveWallpapers \
-LiveWallpapersPicker \
-MagicSmokeWallpapers \
-VisualizationWallpapers \
-librs_jni
 
 # Pick up overlay for features that depend on non-open-source files
 DEVICE_PACKAGE_OVERLAYS := vendor/acer/liquid/overlay

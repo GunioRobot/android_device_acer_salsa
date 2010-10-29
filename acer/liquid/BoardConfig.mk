@@ -34,7 +34,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
-BOARD_WLAN_DEVICE := bcm4325
+BOARD_WLAN_DEVICE := bcm4329
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/BCM4325.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/BCM4325_apsta.bin"
