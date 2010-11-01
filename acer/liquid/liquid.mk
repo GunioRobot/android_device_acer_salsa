@@ -9,7 +9,7 @@
 #    device/acer/liquid/init.salsa.rc:root/init.salsa.rc
 
 # Packages to include
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
 Email \
 VoiceDialer \
 GoogleContactsProvider \
@@ -24,17 +24,14 @@ librs_jni
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 
-# Liquid uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
 # Enabling Ring Tones
 include frameworks/base/data/sounds/OriginalAudio.mk
 
-# Pick up overlay for features that depend on non-open-source files
-DEVICE_PACKAGE_OVERLAYS := vendor/acer/liquid/overlay
+# Liquid uses high-density artwork where available
+PRODUCT_LOCALES += hdpi
 
 # Publish that we support the live wallpaper feature.
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
 packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
 # Overrides
@@ -45,7 +42,7 @@ PRODUCT_MODEL := Liquid
 PRODUCT_MANUFACTURER := Acer
 
 # Additional settings used in AOSP builds
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
@@ -68,36 +65,36 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.ril.gprsclass=10
 
 # Acer specific proximity sensor calibration
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     hw.acer.psensor_thres=500 \
     hw.acer.lsensor_multiplier=-1 \
     hw.acer.psensor_mode=1
 
 # Acer hardware revision
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.hw_version=4
 
 # Speed up scrolling
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=60
 
 # Default network type.
 # 0 => WCDMA preferred, 3 => GSM/AUTO (PRL) preferred
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=3
 
 # WiFi configuration
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=15
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072
 
 # This is a high density device with more memory, so larger vm heaps for it.
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=32m
 
 # Copy Liquid specific overlay configs/overrides
