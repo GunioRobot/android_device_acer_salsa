@@ -21,7 +21,7 @@ USE_CAMERA_STUB := false
 #######
 
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_GPS_LIBRARIES := libgps librpc
+BOARD_GPS_LIBRARIES := libgps librpc libloc
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_FM_RADIO := true
@@ -31,15 +31,24 @@ BOARD_USES_QCOM_LIBS := true
 # For Koush's recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-# Wifi related defines
+# Wifi related defines (for BMC4329)
+# BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+# WPA_SUPPLICANT_VERSION := VER_0_6_X
+# BOARD_WLAN_DEVICE := bcm4329
+# WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
+# WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/BCM4325.bin"
+# WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/BCM4325_apsta.bin"
+# WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=/etc/wifi/nvram.txt"
+# WIFI_DRIVER_MODULE_NAME := "bcm4329"
+
+# Wifi related defines (for BMC4325)
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
-BOARD_WLAN_DEVICE := bcm4329
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
+BOARD_WLAN_DEVICE := bcm4325
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/BCM4325.bin"
-WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/BCM4325_apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=/etc/wifi/nvram.txt"
-WIFI_DRIVER_MODULE_NAME := "bcm4329"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/BCM4325.bin nvram_path=/system/etc/wifi/nvram.txt"
+WIFI_DRIVER_MODULE_NAME := "dhd"
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := true
