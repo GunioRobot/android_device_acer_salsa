@@ -14,6 +14,7 @@ FM \
 
 # Check generic.mk/languages_full.mk to see what applications/languages are installed turns out all languages get included if I don't specify, but some seem to be missing the actuall translation.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 $(call inherit-product-if-exists, vendor/acer/liquid/liquid-vendor.mk)
 
 # Enabling Ring Tones
