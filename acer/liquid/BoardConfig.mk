@@ -17,11 +17,11 @@
 # Product-specific compile-time definitions.
 #
 #######   for use when building CyanogenMod
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 #######
 
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_GPS_LIBRARIES := libgps librpc libloc
+BOARD_USES_QCOM_LIBS := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_FM_RADIO := true
