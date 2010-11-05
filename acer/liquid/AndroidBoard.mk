@@ -58,11 +58,11 @@ $(file) : vendor/acer/liquid/proprietary/usr/keylayout/8k_ffa_keypad.kl | $(ACP)
 
 file := $(TARGET_OUT_KEYLAYOUT)/8k_handset.kl
 ALL_PREBUILT += $(file)
-$(file) : vendor/acer/liquid/usr/keylayout/8k_handset.kl | $(ACP)
+$(file) : vendor/acer/liquid/proprietary/usr/keylayout/8k_handset.kl | $(ACP)
 	$(transform-prebuilt-to-target)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := vendor/acer/liquid/usr/keylayout/8k_ffa_keypad.kcm
+LOCAL_SRC_FILES := vendor/acer/liquid/proprietary/usr/keylayout/8k_ffa_keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
 
 LOCAL_PATH := $(call my-dir)
