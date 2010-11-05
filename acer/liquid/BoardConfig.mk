@@ -73,4 +73,4 @@ BOARD_PAGE_SIZE := 0x00001000
 #TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/kernel
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=qcom
-BOARD_EGL_CFG := device/acer/liquid/proprietary/lib/egl/egl.cfg
+BOARD_EGL_CFG := vendor/acer/liquid/proprietary/lib/egl/egl.cfg
