@@ -41,7 +41,7 @@ PRODUCT_DEVICE := a1
 PRODUCT_MODEL := Liquid
 PRODUCT_MANUFACTURER := Acer
 
-# Additional settings used in AOSP builds
+# Additional build prop settings
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dateformat=MM-dd-yyyy \

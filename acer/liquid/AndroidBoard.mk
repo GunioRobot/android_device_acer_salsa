@@ -62,7 +62,7 @@ $(file) : vendor/acer/liquid/proprietary/usr/keylayout/8k_handset.kl | $(ACP)
 	$(transform-prebuilt-to-target)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := vendor/acer/liquid/proprietary/usr/keylayout/8k_ffa_keypad.kcm
+LOCAL_SRC_FILES := 8k_ffa_keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
 
 LOCAL_PATH := $(call my-dir)
@@ -70,3 +70,48 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 endif
+
+file := $(TARGET_ROOT_OUT)/init.salsa.rc
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/init.salsa.rc | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/default.prop
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/default.prop | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/init.goldfish.rc
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/init.goldfish.rc | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/init.rc
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/init.rc | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/init.salsa.sh
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/init.salsa.sh | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/initlogo.rle
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/initlogo.rle | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/root/sbin/mountbind.sh
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/sbin/mountbind.sh | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/root/sbin/qmuxd.sh
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/sbin/qmuxd.sh | $(ACP)
+$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/sbin/rild.sh
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/root/sbin/rild.sh | $(ACP)
+$(transform-prebuilt-to-target)

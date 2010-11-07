@@ -70,7 +70,7 @@ BOARD_KERNEL_BASE    := 0x20000000
 BOARD_NAND_PAGE_SIZE := 2048
 BOARD_PAGE_SIZE := 0x00001000
 
-#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/kernel
+#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/zImage
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=qcom
 BOARD_EGL_CFG := vendor/acer/liquid/proprietary/lib/egl/egl.cfg
