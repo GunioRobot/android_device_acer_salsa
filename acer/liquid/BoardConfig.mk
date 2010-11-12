@@ -17,7 +17,7 @@
 # Product-specific compile-time definitions.
 #
 #######   for use when building CyanogenMod
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 #######
 
 BOARD_USES_GENERIC_AUDIO := false
@@ -25,6 +25,8 @@ BOARD_USES_QCOM_LIBS := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_FM_RADIO := true
+BOARD_CAMERA_USE_GETBUFFERINFO := true
+# BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
 BOARD_USES_QCOM_LIBS := true
 
