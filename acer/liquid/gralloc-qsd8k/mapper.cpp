@@ -78,7 +78,7 @@ static int gralloc_map(gralloc_module_t const* module,
             return -errno;
         }
         hnd->base = intptr_t(mappedAddress) + hnd->offset;
-        //LOGD("gralloc_map() succeeded fd=%d, off=%d, size=%d, vaddr=%p", 
+        //LOGD("gralloc_map() succeeded fd=%d, off=%d, size=%d, vaddr=%p",
         //        hnd->fd, hnd->offset, hnd->size, mappedAddress);
     }
     *vaddr = (void*)hnd->base;
@@ -107,7 +107,7 @@ static int gralloc_unmap(gralloc_module_t const* module,
 
 /*****************************************************************************/
 
-static pthread_mutex_t sMapLock = PTHREAD_MUTEX_INITIALIZER; 
+static pthread_mutex_t sMapLock = PTHREAD_MUTEX_INITIALIZER;
 
 /*****************************************************************************/
 
@@ -122,9 +122,9 @@ int gralloc_register_buffer(gralloc_module_t const* module,
     /* NOTE: we need to initialize the buffer as not mapped/not locked
      * because it shouldn't when this function is called the first time
      * in a new process. Ideally these flags shouldn't be part of the
-     * handle, but instead maintained in the kernel or at least 
+     * handle, but instead maintained in the kernel or at least
      * out-of-line
-     */ 
+     */
 
     // if this handle was created in this process, then we keep it as is.
     private_handle_t* hnd = (private_handle_t*)handle;
@@ -149,7 +149,7 @@ int gralloc_unregister_buffer(gralloc_module_t const* module,
      */
 
     private_handle_t* hnd = (private_handle_t*)handle;
-    
+
     LOGE_IF(hnd->lockState & private_handle_t::LOCK_STATE_READ_MASK,
             "[unregister] handle %p still locked (state=%08x)",
             hnd, hnd->lockState);
@@ -214,7 +214,7 @@ int gralloc_lock(gralloc_module_t const* module,
         new_value = current_value;
 
         if (current_value & private_handle_t::LOCK_STATE_WRITE) {
-            // already locked for write 
+            // already locked for write
             LOGE("handle %p already locked for write", handle);
             return -EBUSY;
         } else if (current_value & private_handle_t::LOCK_STATE_READ_MASK) {
@@ -224,7 +224,7 @@ int gralloc_lock(gralloc_module_t const* module,
                 return -EBUSY;
             } else {
                 // this is not an error
-                //LOGD("%p already locked for read... count = %d", 
+                //LOGD("%p already locked for read... count = %d",
                 //        handle, (current_value & ~(1<<31)));
             }
         }
@@ -236,7 +236,7 @@ int gralloc_lock(gralloc_module_t const* module,
         }
         new_value++;
 
-        retry = android_atomic_cmpxchg(current_value, new_value, 
+        retry = android_atomic_cmpxchg(current_value, new_value,
                 (volatile int32_t*)&hnd->lockState);
     } while (retry);
 
@@ -273,7 +273,7 @@ int gralloc_lock(gralloc_module_t const* module,
     return err;
 }
 
-int gralloc_unlock(gralloc_module_t const* module, 
+int gralloc_unlock(gralloc_module_t const* module,
         buffer_handle_t handle)
 {
     if (private_handle_t::validate(handle) < 0)
@@ -301,7 +301,7 @@ int gralloc_unlock(gralloc_module_t const* module,
 
         new_value--;
 
-    } while (android_atomic_cmpxchg(current_value, new_value, 
+    } while (android_atomic_cmpxchg(current_value, new_value,
             (volatile int32_t*)&hnd->lockState));
 
     // If this was locked for a software write, send an ioctl to flush the cache

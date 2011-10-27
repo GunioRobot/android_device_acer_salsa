@@ -70,7 +70,7 @@ extern int gralloc_lock(gralloc_module_t const* module,
         int l, int t, int w, int h,
         void** vaddr);
 
-extern int gralloc_unlock(gralloc_module_t const* module, 
+extern int gralloc_unlock(gralloc_module_t const* module,
         buffer_handle_t handle);
 
 extern int gralloc_register_buffer(gralloc_module_t const* module,
@@ -164,7 +164,7 @@ static int gralloc_alloc_framebuffer_locked(alloc_device_t* dev,
         }
         vaddr += bufferSize;
     }
-    
+
     hnd->base = vaddr;
     hnd->offset = vaddr - intptr_t(m->framebuffer->base);
     *pHandle = hnd;
@@ -189,7 +189,7 @@ static int init_pmem_area_locked(private_module_t* m)
     int err = 0;
     int master_fd = open("/dev/pmem", O_RDWR, 0);
     if (master_fd >= 0) {
-        
+
         size_t size;
 #ifndef TARGET_MSM7x27
         pmem_region region;
@@ -208,7 +208,7 @@ static int init_pmem_area_locked(private_module_t* m)
 #endif
         sAllocator.setSize(size);
 
-        void* base = mmap(0, size, 
+        void* base = mmap(0, size,
                 PROT_READ|PROT_WRITE, MAP_SHARED, master_fd, 0);
         if (base == MAP_FAILED) {
             err = -errno;
@@ -263,7 +263,7 @@ static int gralloc_alloc_buffer(alloc_device_t* dev,
         // the copybit module.
         flags |= private_handle_t::PRIV_FLAGS_USES_PMEM;
     }
-    
+
     if (usage & GRALLOC_USAGE_HW_2D) {
         flags |= private_handle_t::PRIV_FLAGS_USES_PMEM;
     }
@@ -368,9 +368,9 @@ try_ashmem:
         hnd->lockState = lockState;
         *pHandle = hnd;
     }
-    
+
     LOGE_IF(err, "gralloc failed err=%s", strerror(-err));
-    
+
     return err;
 }
 
@@ -457,8 +457,8 @@ static int gralloc_free(alloc_device_t* dev,
                 dev->common.module);
         const size_t bufferSize = m->finfo.line_length * m->info.yres;
         int index = (hnd->base - m->framebuffer->base) / bufferSize;
-        m->bufferMask &= ~(1<<index); 
-    } else { 
+        m->bufferMask &= ~(1<<index);
+    } else {
         if (hnd->flags & private_handle_t::PRIV_FLAGS_USES_PMEM) {
             if (hnd->fd >= 0) {
                 struct pmem_region sub = { hnd->offset, hnd->size };

@@ -13,10 +13,10 @@
 # limitations under the License.
 #
 
-[type=NUMERIC]                                          
-                                                        
+[type=NUMERIC]
+
 # keycode       display number  base    caps    fn      caps_fn
-                                                        
+
 A               'A'     '#'     'a'     'A'     '#'     0x00
 B               'B'     '<'     'b'     'B'     '<'     0x00
 C               'C'     '9'     'c'     'C'     '9'     0x00E7
@@ -43,15 +43,15 @@ W               'W'     '1'     'w'     'W'     '1'     0x00
 X               'X'     '8'     'x'     'X'     '8'     0xEF00
 Y               'Y'     '!'     'y'     'Y'     '!'     0x00A1
 Z               'Z'     '7'     'z'     'Z'     '7'     0x00
-                                                        
+
 COMMA           ','     ','     ','     ';'     ';'     '|'
 PERIOD          '.'     '.'     '.'     ':'     ':'     0x2026
 AT              '@'     '0'     '@'     '0'     '0'     0x2022
 SLASH           '/'     '/'     '/'     '?'     '?'     '\'
-                                                        
+
 SPACE           0x20    0x20    0x20    0x20    0xEF01  0xEF01
 ENTER         0xa     0xa     0xa     0xa     0xa     0xa
-                                                        
+
 # on pc keyboards
 TAB             0x9     0x9     0x9     0x9     0x9     0x9
 0               '0'     '0'     '0'     ')'     ')'     ')'
@@ -64,7 +64,7 @@ TAB             0x9     0x9     0x9     0x9     0x9     0x9
 7               '7'     '7'     '7'     '&'     '&'     '&'
 8               '8'     '8'     '8'     '*'     '*'     '*'
 9               '9'     '9'     '9'     '('     '('     '('
-                                                        
+
 GRAVE           '`'     '`'     '`'     '~'     '`'     '~'
 MINUS           '-'     '-'     '-'     '_'     '-'     '_'
 EQUALS          '='     '='     '='     '+'     '='     '+'
@@ -76,6 +76,6 @@ APOSTROPHE      'A'     '%'     '''     'A'     '%'     0x00
 STAR            '*'     '*'     '*'     '*'     '*'     '*'
 POUND           '#'     '#'     '#'     '#'     '#'     '#'
 PLUS            '+'     '+'     '+'     '+'     '+'     '+'
-                                                        
-                                                        
-                                                        
+
+
+
